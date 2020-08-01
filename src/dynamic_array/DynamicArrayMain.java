@@ -7,7 +7,7 @@ public class DynamicArrayMain {
 		DynamicArray<Integer> dynarr = new DynamicArray<>();
 
 		dynarr.add(1);
-		dynarr.add(2);
+		dynarr.add(3);
 		dynarr.add(2);
 		dynarr.add(4);
 
@@ -17,22 +17,31 @@ public class DynamicArrayMain {
 
 		System.out.println(dynarr);
 
-		dynarr.set(3, 2);
+		dynarr.set(1, 2);
+		dynarr.set(2, 3);
 
 		System.out.println(dynarr);
 
-		dynarr.removeAt(4);
+		dynarr.removeAt(2);
+		dynarr.removeAt(2);
 
 		System.out.println(dynarr);
 
-		dynarr.remove(4);
+		dynarr.remove(5);
+		dynarr.add(3);
 
 		System.out.println(dynarr);
 
-		dynarr.add(4);
-		dynarr.add(5);
+		System.out.println(dynarr.length());
+		System.out.println(dynarr.isEmpty());
+		System.out.println(dynarr.get(2));
+		System.out.println(dynarr.indexOf(2));
+		System.out.println(dynarr.contains(3));
 
-		System.out.println(dynarr);
+		dynarr.clear();
+
+		System.out.println(dynarr.length());
+		System.out.println(dynarr.isEmpty());
 
 	}
 
