@@ -1,4 +1,4 @@
-package linked_list;
+package data_structures.linked_list;
 
 public class DoubleLinkedList<T> {
 	private int size = 0;

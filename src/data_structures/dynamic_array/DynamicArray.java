@@ -1,4 +1,4 @@
-package dynamic_array;
+package data_structures.dynamic_array;
 
 import java.util.Arrays;
 

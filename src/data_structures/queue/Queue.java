@@ -1,4 +1,4 @@
-package queue;
+package data_structures.queue;
 
 @SuppressWarnings("unchecked")
 public class Queue<T> {
