@@ -8,6 +8,7 @@ public class BinaryTreeMain {
 	public static void main(String[] args) {
 		arrayBinaryTreeImpl();
 		binaryTreeImpl();
+		binaryTreeInsertionImpl();
 	}
 
 	private static void arrayBinaryTreeImpl() {
@@ -74,6 +75,29 @@ public class BinaryTreeMain {
 
 		System.out.println();
 		System.out.println("BFS Traversal -");
+		btree.BFS(root);
+	}
+
+	@SuppressWarnings("rawtypes")
+	private static void binaryTreeInsertionImpl() {
+		BinaryTree<Character> btree = new BinaryTree<>();
+
+		Node root = btree.setRootNode('A');
+
+		btree.insert(root, 'B');
+		btree.insert(root, 'C');
+		btree.insert(root, 'D');
+		btree.insert(root, 'E');
+
+		System.out.println();
+		System.out.println("Insertion -");
+		btree.BFS(root);
+
+		btree.remove(root, 'D');
+		btree.remove(root, 'C');
+
+		System.out.println();
+		System.out.println("Deletion -");
 		btree.BFS(root);
 	}
 }

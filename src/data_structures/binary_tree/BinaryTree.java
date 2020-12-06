@@ -123,4 +123,58 @@ public class BinaryTree<T> {
 			BFS(nodes.remove());
 		}
 	}
+
+	// Insert element after last node
+	public void insert(Node node, T value) {
+		// Node is the first i.e root node
+		if (node == null) {
+			root = new Node(value);
+			return;
+		}
+
+		// Add the traversal node to queue that stores nodes to visit
+		Queue<Node> nodes = new LinkedList<>();
+		nodes.add(node);
+
+		// Loop till queue is empty i.e no nodes left to visit
+		while (!nodes.isEmpty()) {
+			// Visit the next node in queue
+			Node temp = nodes.peek();
+			nodes.remove();
+
+			// If node left child is null, add new node to it else add left node to queue
+			if (temp.left == null) {
+				temp.left = new Node(value);
+				break;
+			} else
+				nodes.add(temp.left);
+
+			// If node right child is null, add new node to it else add right node to queue
+			if (temp.right == null) {
+				temp.right = new Node(value);
+				break;
+			} else
+				nodes.add(temp.right);
+		}
+	}
+
+	public void remove(Node node, T value) {
+		// Return if node does not exist
+		if (node == null) {
+			return;
+		}
+
+		// If left node of current node has value remove it else go down to left
+		if (node.left != null && node.left.value == value) {
+			node.left = null;
+		} else
+			remove(node.left, value);
+
+		// If right node of current node has value remove it else go down right
+		if (node.right != null && node.right.value == value) {
+			node.right = null;
+		} else
+			remove(node.right, value);
+	}
+
 }
