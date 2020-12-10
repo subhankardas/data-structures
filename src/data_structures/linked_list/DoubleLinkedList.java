@@ -202,6 +202,53 @@ public class DoubleLinkedList<T> {
 		return -1;
 	}
 
+	/*
+	 * Reverse single linked list i.e. using only next pointer of nodes.
+	 */
+	public void reverse() {
+		if (head == null)
+			return;
+
+		Node prev = null;
+		Node curr = head;
+		Node next = null;
+
+		while (curr != null) {
+			next = curr.next; // Store next
+			curr.next = prev; // Set current next to previous i.e. reverse link
+			prev = curr; // Set this as previous for next iteration
+			curr = next; // Now update current for next iteration
+		}
+
+		this.head = prev; // Finally update head with the last visited node in list
+	}
+
+	/*
+	 * Reverse doubly linked list i.e. using both previous and next node pointer.
+	 */
+	public void reverseDoublyLinkedList() {
+		if (head == null)
+			return;
+
+		Node current = head;
+		Node temp = null;
+
+		while (current != null) {
+			// Swap previous and next node pointers for current node
+			temp = current.prev;
+			current.prev = current.next;
+			current.next = temp;
+
+			// Set current node for next iteration
+			current = current.prev;
+		}
+
+		// Set new head if list is not empty
+		if (temp != null) {
+			head = temp.prev;
+		}
+	}
+
 	public boolean contains(T elem) {
 		return indexOf(elem) != -1;
 	}
