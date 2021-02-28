@@ -52,7 +52,53 @@ public class BinarySearchTree {
 			return searchNode(node.right, value);
 		}
 	}
-	
+
+	/**
+	 * Removal of node can occur in three possible ways,
+	 * 
+	 * 1. Node is leaf node: Simply remove the node.
+	 * 
+	 * 2. Node has one child node: Copy child node value to the node and remove the
+	 * child node.
+	 * 
+	 * 3. Node has two children nodes: Find the minimum node value in right subtree,
+	 * copy that value to the node, remove the minimum value node i.e the inorder
+	 * successor.
+	 */
+	public Node remove(Node node, int value) {
+		if (node == null)
+			return node;
+
+		// Select subtree and go down until value is found
+		if (value < node.value) {
+			node.left = remove(node.left, value);
+		} else if (value > node.value) {
+			node.right = remove(node.right, value);
+		} else {
+			// Value found, remove node with one or no child
+			if (node.left == null) {
+				return node.right;
+			} else if (node.right == null) {
+				return node.left;
+			}
+
+			// Node with two children, get minimum value of right subtree, delete that value
+			node.value = minValue(node.right);
+			node.right = remove(node.right, node.value);
+		}
+
+		return node;
+	}
+
+	private int minValue(Node node) {
+		int minValue = node.value;
+		while (node.left != null) {
+			minValue = node.left.value;
+			node = node.left;
+		}
+		return minValue;
+	}
+
 }
 
 class Node {

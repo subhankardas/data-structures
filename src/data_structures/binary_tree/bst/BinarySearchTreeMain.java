@@ -33,6 +33,12 @@ public class BinarySearchTreeMain {
 		System.out.println();
 		System.out.println("Searching:");
 		search();
+
+		System.out.println();
+		System.out.println("Removing :");
+		bst.remove(root, 10);
+		bst.remove(root, 6);
+		bst.inorderDFS(root);
 	}
 
 	public static void insert(int value) {
@@ -70,5 +76,5 @@ public class BinarySearchTreeMain {
 		System.out.println("15: " + bst.search(root, 15));
 		System.out.println("1: " + bst.search(root, 1));
 	}
-	
+
 }
