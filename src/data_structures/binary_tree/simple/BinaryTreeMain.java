@@ -1,6 +1,6 @@
-package data_structures.binary_tree;
+package data_structures.binary_tree.simple;
 
-import data_structures.binary_tree.BinaryTree.Node;
+import data_structures.binary_tree.simple.BinaryTree.Node;
 
 @SuppressWarnings("unchecked")
 public class BinaryTreeMain {

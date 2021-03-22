@@ -1,4 +1,4 @@
-package data_structures.binary_tree;
+package data_structures.binary_tree.problems;
 
 /**
  * Construct BST from given preorder traversal 

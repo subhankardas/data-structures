@@ -1,4 +1,4 @@
-package data_structures.linked_list;
+package data_structures.linked_list.problems;
 
 /**
  * Implementation for Floyd’s Cycle-Finding Algorithm.
