@@ -1,6 +1,8 @@
 package data_structures.graph.simple;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Queue;
 
 /**
  * Graph Representations:
@@ -39,6 +41,65 @@ public class AdjacencyGraph {
 			}
 			System.out.println();
 		}
+	}
+
+	public void BFS(int start) {
+		// Create array to flag nodes as visited to avoid loop
+		boolean visited[] = new boolean[adjacenctEdges.size()];
+
+		// Queue to hold adjacent vertices for a node
+		Queue<Integer> queue = new ArrayDeque<Integer>();
+
+		// Start with a node, mark it visited
+		queue.add(start);
+		visited[start] = true;
+
+		while (queue.size() != 0) {
+			// Get next node in queue as current node
+			int currentNode = queue.poll();
+			ArrayList<Integer> vertices = adjacenctEdges.get(currentNode);
+
+			// Visit all adjacent vertices for current node, mark them as visited
+			for (int vert : vertices) {
+				if (visited[vert] != true) {
+					queue.add(vert);
+					visited[vert] = true;
+				}
+			}
+
+			System.out.print(" -> " + currentNode);
+		}
+		System.out.println();
+	}
+
+	public void DFS(int i) {
+		// Create array to flag nodes as visited to avoid loop
+		boolean visited[] = new boolean[adjacenctEdges.size()];
+
+		// Visit the starting node
+		DFSTraversal(i, visited);
+	}
+
+	private void DFSTraversal(int i, boolean[] visited) {
+		// Mark the current node as visited
+		visited[i] = true;
+		System.out.print(" -> " + i);
+
+		// Get connected vertices for the current node
+		ArrayList<Integer> vertices = adjacenctEdges.get(i);
+
+		// While there are vertices to visit
+		while (vertices != null && vertices.size() > 0) {
+			// Get next connected node and remove from list to visit
+			int next = vertices.get(0);
+			vertices.remove(0);
+
+			// If not visited, visit the next connected node by depth
+			if (visited[next] != true) {
+				DFSTraversal(next, visited);
+			}
+		}
+		System.out.println();
 	}
 
 }

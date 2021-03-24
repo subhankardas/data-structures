@@ -18,6 +18,12 @@ public class GraphMain {
 		graph.addEdge(3, 4);
 
 		graph.print();
+		
+		System.out.print("BFS:");
+		graph.BFS(2);
+		
+		System.out.print("DFS:");
+		graph.DFS(2);
 	}
 
 }
