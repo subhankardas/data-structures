@@ -2,13 +2,13 @@ package data_structures.linked_list.simple;
 
 public class DoubleLinkedList<T> {
 	private int size = 0;
-	private Node head;
-	private Node tail;
+	public Node head;
+	public Node tail;
 
-	private class Node {
-		private T data; // Data
-		private Node prev; // Pointer to next node
-		private Node next; // Pointer to previous node
+	public class Node {
+		public T data; // Data
+		public Node prev; // Pointer to next node
+		public Node next; // Pointer to previous node
 
 		public Node(T data, Node prev, Node next) {
 			this.data = data;
