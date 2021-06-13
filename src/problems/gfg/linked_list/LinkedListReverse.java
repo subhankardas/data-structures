@@ -1,4 +1,4 @@
-package problems.gfg;
+package problems.gfg.linked_list;
 
 import data_structures.linked_list.simple.DoubleLinkedList;
 import data_structures.linked_list.simple.DoubleLinkedList.Node;
