@@ -1,4 +1,4 @@
-package data_structures.segmenttree;
+package data_structures.segment_tree;
 
 import java.util.Arrays;
 
@@ -63,13 +63,13 @@ public class SegmentTree {
 			// Leaf node, update value
 			st[vertex] = new_value;
 		} else {
-			int tm = (vleft + vright) / 2;
+			int mid = (vleft + vright) / 2;
 
 			// Update for left or right subtree
-			if (position <= tm)
-				update(vertex * 2 + 1, vleft, tm, position, new_value);
+			if (position <= mid)
+				update(vertex * 2 + 1, vleft, mid, position, new_value);
 			else
-				update(vertex * 2 + 2, tm + 1, vright, position, new_value);
+				update(vertex * 2 + 2, mid + 1, vright, position, new_value);
 
 			// Update node value after leaf node update
 			st[vertex] = st[vertex * 2 + 1] + st[vertex * 2 + 2];

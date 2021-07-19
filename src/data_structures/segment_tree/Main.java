@@ -1,4 +1,4 @@
-package data_structures.segmenttree;
+package data_structures.segment_tree;
 
 import java.util.Arrays;
 
