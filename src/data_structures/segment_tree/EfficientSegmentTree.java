@@ -44,7 +44,7 @@ public class EfficientSegmentTree {
 	}
 
 	void update(int pos, int value) {
-		// Eet value at position i.e. leaf node
+		// Set value at position i.e. leaf node
 		est[pos + len] = value;
 		pos = pos + len;
 
