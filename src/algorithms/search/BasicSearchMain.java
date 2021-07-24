@@ -11,6 +11,7 @@ public class BasicSearchMain {
 		BinarySearch binarySearch = new BinarySearch();
 		JumpSearch jumpSearch = new JumpSearch();
 		InterpolationSearch interpolationSearch = new InterpolationSearch();
+		ExponentialSearch exponentialSearch = new ExponentialSearch();
 
 		// Binary search
 		System.out.println("BINARY SEARCH -\nInput : " + Arrays.toString(sorted));
@@ -32,6 +33,13 @@ public class BasicSearchMain {
 		System.out.println("Search 5  : " + interpolationSearch.find(sorted, 5));
 		System.out.println("Search 32 : " + interpolationSearch.find(sorted, 32));
 		System.out.println("Search 65 : " + interpolationSearch.find(sorted, 65));
+
+		// Exponential search
+		System.out.println("\nEXPONENTIAL SEARCH -\nInput : " + Arrays.toString(sorted));
+		System.out.println("Search 16 : " + exponentialSearch.find(sorted, 16));
+		System.out.println("Search 5  : " + exponentialSearch.find(sorted, 5));
+		System.out.println("Search 32 : " + exponentialSearch.find(sorted, 32));
+		System.out.println("Search 65 : " + exponentialSearch.find(sorted, 65));
 
 	}
 
